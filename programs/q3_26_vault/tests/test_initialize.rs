@@ -143,4 +143,5 @@ fn test() {
         0,
         "vault should be empty"
     );
+    
 }

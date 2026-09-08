@@ -55,12 +55,7 @@ impl<'info> Withdraw<'info> {
         require!(amount > 0, ErrorCode::InvalidAmount);
 
         let cpi_program = self.system_program.key();
-        // let signer_seeds: [&[&[u8]]; 1] = [&[
-        //     ESCROW_SEED,
-        //     self.maker.key.as_ref(),
-        //     &self.escrow.seed.to_le_bytes()[..],
-        //     &[self.escrow.bump],
-        // ]];
+        
         let vault_signer_seeds = [
             VAULT_SEED,
             self.user.key.as_ref(),
